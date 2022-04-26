@@ -1,0 +1,64 @@
+  <!-- ngFor -->
+  <h1>NgFor</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [class.checked]="p.checked">
+      </span>
+      {{i}}: {{p.name}}
+    </li>
+  </ul>
+  <h1>ngClass</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [ngClass]="{ 'checked': p.checked, 'another-class': !p.checked }">
+      </span>
+      {{i}}: {{p.name}}
+    </li>
+  </ul>
+  <h1>dynamic styles</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [style.backgroundColor]="p.checked ? 'green' : 'red'">
+      </span>
+      {{i}}: {{p.name}}
+    </li>
+  </ul>
+  <h1>ngStyle</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [ngStyle]="{ 'backgroundColor': p.checked ? 'green' : 'red' }">
+      </span>
+      {{i}}: {{p.name}}
+    </li>
+  </ul>
+  <h1>json pipe</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [ngStyle]="{ 'backgroundColor': p.checked ? 'green' : 'red' }">
+      </span>
+      {{i}}: {{p.name}}
+      <p>{{ p | json }}</p>
+      <p>date: {{ p.checked ? (p.date | date: 'dd/MMM/yyyy' | uppercase) : 'Not checked' }}</p>
+    </li>
+  </ul>
+  <h1>save navidation operator</h1>
+  <ul>
+    <li *ngFor="let p of passengers; let i = index">
+      <span 
+        class="status"
+        [ngStyle]="{ 'backgroundColor': p.checked ? 'green' : 'red' }">
+      </span>
+      {{i}}: {{p.name}}
+      <p>Children: {{p.children?.length || 0}}</p>
+    </li>
+  </ul>
