@@ -1,0 +1,12 @@
+.status {
+    width: 10px;
+    height: 10px;
+    display: block;
+    margin: 8px 10px 0px 0px;
+    float: left;
+    border-radius: 50%;
+    background: red;
+}
+.checked {
+    background: green;
+}

@@ -1,6 +1,16 @@
   <!-- ngFor -->
-  <h1>NgFor</h1>
-  <ul>
+  <!-- <h1>NgFor</h1> -->
+
+  <passenger-count
+    [items]="passengers">
+  </passenger-count>
+
+  <passenger-detail
+   *ngFor="let passenger of passengers"
+   [detail]="passenger">
+  </passenger-detail>
+
+  <!-- <ul>
     <li *ngFor="let p of passengers; let i = index">
       <span 
         class="status"
@@ -61,4 +71,4 @@
       {{i}}: {{p.name}}
       <p>Children: {{p.children?.length || 0}}</p>
     </li>
-  </ul>
+</ul> -->
