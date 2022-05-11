@@ -1,15 +1,30 @@
-<span 
+<!-- <span 
     class="status"
     [class.checked]="detail.checked">
 </span>
 <span 
     class="status"
     [ngClass]="{ 'checked': detail.checked, 'another-class': !detail.checked }">
-</span>
+</span> -->
 <span 
     class="status"
     [style.backgroundColor]="detail.checked ? 'green' : 'red'">
 </span>
+<div *ngIf="editing">
+    <input 
+        type="text" 
+        [value]="detail.name"
+        (input)="onNameChange(name.value)"
+        #name>
+</div>
+<div *ngIf="!editing">
+    {{detail.name}}
+</div>
 <p>date: {{ detail.checked ? (detail.date | date: 'dd/MMM/yyyy' | uppercase) : 'Not checked' }}</p>
 <p>Children: {{detail.children?.length || 0}}</p>
-{{detail.name}}
+<button (click)="toogleEdit()">
+    {{ editing ? 'Done' : 'Edit' }}
+</button>
+<button (click)="onRemove()">
+    Remove
+</button>
