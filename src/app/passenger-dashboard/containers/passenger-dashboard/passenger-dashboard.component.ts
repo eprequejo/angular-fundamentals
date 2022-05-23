@@ -17,14 +17,15 @@ export class PassengerDashboardComponent implements OnInit {
     ngOnInit(): void {
 
         this.passengerDashboardService.getPassengers().subscribe(s => {
-            console.log(s)
             this.passengers = s;
-        })
+        }, e => console.log(e))
     }
 
     handleRemove(event: Passenger) {
-        this.passengers = this.passengers.filter(p => {
-            return event.id !== p.id;
+        this.passengerDashboardService.removePassengers(event).subscribe(s => {
+            this.passengers = this.passengers.filter(p => {
+                return event.id !== p.id;
+            });
         });
     }
 
