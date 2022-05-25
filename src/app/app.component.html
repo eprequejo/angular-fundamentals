@@ -2,15 +2,15 @@
   <span>{{ title }}</span>
 
   <!-- property binding - one way data binding -->
-  <h1>property binding</h1>
+  <!-- <h1>property binding</h1>
   <div>
     <h1 [innerHTML] = "title"></h1>
     <img [src]="logo">
     <input type="text" [value]="name">
-  </div>
+  </div> -->
 
   <!-- event binding - one way data binding -->
-  <h1>event binding</h1>
+  <!-- <h1>event binding</h1>
   <div>
     <input 
       type="text"
@@ -18,10 +18,10 @@
       (input)="handleInput($event)"
       (blur)="handleBlur($event)">
     <button (click)="handleClick()">Change name</button>
-  </div>
+  </div> -->
 
   <!-- two ways data binding -->
-  <h1>two ways data binding</h1>
+  <!-- <h1>two ways data binding</h1>
   <div>
     <input 
       type="text"
@@ -32,19 +32,19 @@
       <input 
         type="text"
         [(ngModel)]="name">
-  </div>
+  </div> -->
 
   <!-- template ref -->
-  <h1>template ref</h1>
+  <!-- <h1>template ref</h1>
   <div>
     <input type="text" #username>
     <button (click)="handleClickWithRef(username.value)">Username</button>
-  </div>
+  </div> -->
 
-  <h1>{{name}}</h1>
+  <!-- <h1>{{name}}</h1> -->
 
   <!-- ngIf -->
-  <h1>NgIf</h1>
+  <!-- <h1>NgIf</h1>
   <input 
     type="text" 
     [value]="name" 
@@ -52,7 +52,7 @@
   
   <div *ngIf="name.length > 2">
     Searching for ... {{ name }}
-  </div>
+  </div> -->
 
   <!-- web component -->
   <!-- <template [ngIf]="name.length > 2">
@@ -62,5 +62,7 @@
   </template> -->
 
 <passenger-dashboard></passenger-dashboard>
+
+<passenger-viewer></passenger-viewer>
 
 <router-outlet></router-outlet>

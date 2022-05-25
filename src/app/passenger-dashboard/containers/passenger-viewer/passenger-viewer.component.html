@@ -1,0 +1,7 @@
+<div>
+    {{ passenger | json }}
+    <passenger-form 
+        [detail]="passenger"
+        (update)="onUpdatePassenger($event)">
+    </passenger-form>
+</div>
